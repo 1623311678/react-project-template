@@ -11,7 +11,7 @@
 
 如何查看自己的镜像是淘宝镜像？运行下面命令：
 ```
- npm config get 
+ npm config get registry
 
 ```
 
@@ -26,7 +26,7 @@
 
 ```
  npm config set registry https://registry.npmjs.org/
- 
+
 ```
 ### 本地开发
 
