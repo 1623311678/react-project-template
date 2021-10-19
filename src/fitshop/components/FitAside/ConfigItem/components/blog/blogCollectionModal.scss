@@ -1,0 +1,36 @@
+.blog-collection-modal {
+
+  .ant-btn-primary {
+    background: #068468;
+    border-color: #068468;
+  }
+
+  .ant-radio-checked .ant-radio-inner {
+    border-color: #068468;
+  }
+
+  .ant-radio-inner:after {
+    background-color: #068468;
+  }
+
+  .ant-table-row-selected {
+    background-color: #068468 !important;
+  }
+
+  .ant-table-tbody > tr.ant-table-row-selected > td {
+    background: #e7efed;
+  }
+
+  .ant-table-tbody > tr.ant-table-row-selected:hover > td {
+    background: #d2e8e3;
+  }
+}
+
+
+.blog-collection-desigen-title {
+  width: 180px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-all;
+}

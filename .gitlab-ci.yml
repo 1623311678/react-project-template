@@ -1,0 +1,176 @@
+.branch_to_build: &btb
+  only:
+  - dev@gaea/gaea-dashboard-fe
+  - test@gaea/gaea-dashboard-fe
+  - pre@gaea/gaea-dashboard-fe
+  - prod@gaea/gaea-dashboard-fe
+
+.runner: &runner
+  tags:
+  - gaea-storefront-new
+
+.runner: &docker-runner
+  tags:
+  - gaea-docker-share
+
+stages:
+  - build
+  - push
+  - deploy
+
+variables:
+  PROJECT_ID: papaya-store-prod
+  DEPLOY_ENV: $CI_BUILD_REF_NAME
+  AUTH: --allow-unauthenticated
+  VPC: fpp-serverless-vpc-usc1
+  PORT: 80
+  MIN: 1
+  MODULE: $CI_PROJECT_NAME
+  EGRESS: all
+  INGRESS: internal-and-cloud-load-balancing
+  REGION: us-central1
+
+cache:
+  key: "$PROJECT_ID-$CI_PROJECT_NAME:$DEPLOY_ENV-$CI_PIPELINE_ID"
+  paths:
+    - node_modules/
+    - build/
+
+build:
+  stage: build
+  <<: *btb
+  <<: *runner
+  script:
+  - docker build
+    --build-arg DEPLOY_ENV=$DEPLOY_ENV
+    -t gcr.io/$PROJECT_ID/$CI_PROJECT_NAME:$DEPLOY_ENV-$CI_PIPELINE_ID 
+    -t gcr.io/$PROJECT_ID/$CI_PROJECT_NAME:$DEPLOY_ENV .
+    
+push:
+  stage: push
+  <<: *btb
+  <<: *runner
+  script:
+  - docker push gcr.io/$PROJECT_ID/$CI_PROJECT_NAME:$DEPLOY_ENV-$CI_PIPELINE_ID
+  - docker push gcr.io/$PROJECT_ID/$CI_PROJECT_NAME:$DEPLOY_ENV
+ 
+deploy_dev:
+  variables:
+    VPC: fpp-serverless-vpc-usc1
+  stage: deploy
+  <<: *runner
+  script:
+    - echo $DEPLOY_ENV
+    - gcloud beta run deploy $CI_PROJECT_NAME-${DEPLOY_ENV}
+      --image gcr.io/$PROJECT_ID/$CI_PROJECT_NAME:${DEPLOY_ENV}-$CI_PIPELINE_ID
+      --platform managed
+      ${AUTH}
+      --service-account gaea-cloudrun-sa@$PROJECT_ID.iam.gserviceaccount.com
+      --region us-central1
+      --vpc-connector ${VPC}
+      --ingress ${INGRESS}
+      --vpc-egress ${EGRESS}
+      --port ${PORT}
+      --min-instances ${MIN}
+      --cpu 1
+      --memory 1Gi
+      --set-env-vars DEPLOY_ENV=${DEPLOY_ENV}
+      --labels=project=funpinpin,service=gaea,module=${MODULE},env=${DEPLOY_ENV}
+      --project $PROJECT_ID
+  only:
+  - dev@gaea/gaea-dashboard-fe
+
+deploy_test:
+  variables:
+    VPC: fpp-serverless-vpc-usc1
+    DEPLOY_ENV: test
+  stage: deploy
+  <<: *runner
+  script:
+    - gcloud beta run deploy $CI_PROJECT_NAME-${DEPLOY_ENV}
+      --image gcr.io/$PROJECT_ID/$CI_PROJECT_NAME:${DEPLOY_ENV}-$CI_PIPELINE_ID
+      --platform managed
+      ${AUTH}
+      --service-account gaea-cloudrun-sa@$PROJECT_ID.iam.gserviceaccount.com
+      --region us-central1
+      --vpc-connector ${VPC}
+      --ingress ${INGRESS}
+      --vpc-egress ${EGRESS}
+      --port ${PORT}
+      --min-instances ${MIN}
+      --cpu 1
+      --memory 1Gi
+      --set-env-vars DEPLOY_ENV=${DEPLOY_ENV}
+      --labels=project=funpinpin,service=gaea,module=${MODULE},env=${DEPLOY_ENV}
+      --project $PROJECT_ID
+  only:
+  - test@gaea/gaea-dashboard-fe
+  
+deploy_test_on_gke:
+  image: google/cloud-sdk
+  variables:
+    VPC: fpp-serverless-vpc-usc1
+    DEPLOY_ENV: test
+    GKE_NAME: gke-gaea-test-usc1-210902
+  stage: deploy
+  <<: *docker-runner
+  script:
+    - gcloud container clusters get-credentials $GKE_NAME --region $REGION --project $PROJECT_ID
+    - kubectl set image deployments $CI_PROJECT_NAME-$DEPLOY_ENV
+      $CI_PROJECT_NAME-$DEPLOY_ENV=gcr.io/$PROJECT_ID/$CI_PROJECT_NAME:$DEPLOY_ENV-$CI_PIPELINE_ID
+      --record
+  only:
+  - test@gaea/gaea-dashboard-fe
+
+deploy_pre:
+  variables:
+    VPC: fpp-serverless-vpc-usc1
+    DEPLOY_ENV: pre
+  stage: deploy
+  <<: *runner
+  script:
+    - gcloud beta run deploy $CI_PROJECT_NAME-${DEPLOY_ENV}
+      --image gcr.io/$PROJECT_ID/$CI_PROJECT_NAME:${DEPLOY_ENV}-$CI_PIPELINE_ID
+      --platform managed
+      ${AUTH}
+      --service-account gaea-cloudrun-sa@$PROJECT_ID.iam.gserviceaccount.com
+      --region us-central1
+      --vpc-connector ${VPC}
+      --ingress ${INGRESS}
+      --vpc-egress ${EGRESS}
+      --port ${PORT}
+      --min-instances ${MIN}
+      --cpu 1
+      --memory 1Gi
+      --set-env-vars DEPLOY_ENV=${DEPLOY_ENV}
+      --labels=project=funpinpin,service=gaea,module=${MODULE},env=${DEPLOY_ENV}
+      --project $PROJECT_ID
+  only:
+  - pre@gaea/gaea-dashboard-fe
+  
+deploy_prod:
+  variables:
+    VPC: gaea-prod-slvpc-usc1
+    MIN: 3
+    DEPLOY_ENV: prod
+  stage: deploy
+  <<: *runner
+  script:
+    - gcloud beta run deploy $CI_PROJECT_NAME-${DEPLOY_ENV}
+      --image gcr.io/$PROJECT_ID/$CI_PROJECT_NAME:${DEPLOY_ENV}-$CI_PIPELINE_ID
+      --platform managed
+      ${AUTH}
+      --service-account gaea-cloudrun-sa@$PROJECT_ID.iam.gserviceaccount.com
+      --region us-central1
+      --vpc-connector ${VPC}
+      --ingress ${INGRESS}
+      --vpc-egress ${EGRESS}
+      --port ${PORT}
+      --min-instances ${MIN}
+      --cpu 1
+      --memory 1Gi
+      --set-env-vars DEPLOY_ENV=${DEPLOY_ENV}
+      --labels=project=funpinpin,service=gaea,module=${MODULE},env=${DEPLOY_ENV}
+      --project $PROJECT_ID
+  only:
+  - prod@gaea/gaea-dashboard-fe

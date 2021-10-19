@@ -1,0 +1,8 @@
+@font-face {
+    font-family: Crete_Round-Italic;
+    src: url(@assets/fonts/GlobalFont/Crete_Round/CreteRound-Italic.ttf);
+}
+@font-face {
+    font-family: Crete_Round-Regular;
+    src: url(@assets/fonts/GlobalFont/Crete_Round/CreteRound-Regular.ttf);
+}

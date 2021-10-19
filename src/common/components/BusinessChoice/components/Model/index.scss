@@ -1,0 +1,75 @@
+.modal-inner-root-choice {
+  // position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  background: #ffffff;
+  z-index: 999;
+  transition: top 500ms; // 动画有点问题,后续优化
+
+  &.show {
+    display: flex;
+    flex-direction: column;
+    top: 0;
+  }
+
+  .input-content {
+    height: 72px;
+  }
+
+  .h-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    background: #f7f8f9;
+    position: relative;
+    .title {
+      font-size: 14px;
+      color: #222222;
+    }
+
+    .icon-close {
+      position: absolute;
+      right: 4px;
+      top: 6px;
+    }
+  }
+  .b-content {
+    width: 100%;
+    // position: absolute;
+    min-height: 64px;
+    // bottom: 0;
+    // right: 0;
+    border-top: 0.5px solid #ccc;
+    .b-product {
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      border-bottom: 0.5px solid #ccc;
+      padding: 0 10px;
+      background-color: #fff;
+      .b-product-right {
+        margin: 5px 0;
+      }
+      .b-title {
+        color: rgba(109, 113, 117, 1);
+      }
+      img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+    .b-wrapper {
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #fff;
+      button {
+        margin: 0 5px;
+      }
+    }
+  }
+}

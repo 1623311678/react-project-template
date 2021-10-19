@@ -1,0 +1,43 @@
+@import "@src/styles/base.scss";
+ul,
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.fpp_tab {
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+    background-color: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    overflow-x: hidden;
+}
+.fpp_tab-item {
+    color: #666666;
+    font-size: 14px;
+    padding-top: 12px;
+    margin: 0 20px;
+    white-space: nowrap;
+    cursor: pointer;
+    position: relative;
+    font-family: PingFangSC-Regular, PingFang SC;
+    letter-spacing: 1px;
+}
+.fpp_tab-item.fpp_tab-active {
+    color: #068468;
+    font-weight: bold;
+    background-color: transparent;
+    &::after {
+        content: "";
+        width: 40px;
+        height: 2px;
+        border: 1px;
+        background-color: #068468;
+        bottom: 0;
+        display: block;
+        margin: 0 auto;
+        margin-top: 12px;
+    }
+}

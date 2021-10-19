@@ -1,0 +1,20 @@
+@font-face {
+    font-family: Baloo_Bhai_2-Bold;
+    src: url(@assets/fonts/GlobalFont/Baloo_Bhai_2/BalooBhai2-Bold.ttf);
+}
+@font-face {
+    font-family: Baloo_Bhai_2-ExtraBold;
+    src: url(@assets/fonts/GlobalFont/Baloo_Bhai_2/BalooBhai2-ExtraBold.ttf);
+}
+@font-face {
+    font-family: Baloo_Bhai_2-Medium;
+    src: url(@assets/fonts/GlobalFont/Baloo_Bhai_2/BalooBhai2-Medium.ttf);
+}
+@font-face {
+    font-family: Baloo_Bhai_2-Regular;
+    src: url(@assets/fonts/GlobalFont/Baloo_Bhai_2/BalooBhai2-Regular.ttf);
+}
+@font-face {
+    font-family: Baloo_Bhai_2-SemiBold;
+    src: url(@assets/fonts/GlobalFont/Baloo_Bhai_2/BalooBhai2-SemiBold.ttf);
+}

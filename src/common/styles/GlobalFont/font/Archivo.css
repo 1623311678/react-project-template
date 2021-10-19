@@ -1,0 +1,32 @@
+@font-face {
+    font-family: Archivo-Bold;
+    src: url(@assets/fonts/GlobalFont/Archivo/Archivo-Bold.ttf);
+}
+@font-face {
+    font-family: Archivo-BoldItalic;
+    src: url(@assets/fonts/GlobalFont/Archivo/Archivo-BoldItalic.ttf);
+}
+@font-face {
+    font-family: Archivo-Italic;
+    src: url(@assets/fonts/GlobalFont/Archivo/Archivo-Italic.ttf);
+}
+@font-face {
+    font-family: Archivo-Medium;
+    src: url(@assets/fonts/GlobalFont/Archivo/Archivo-Medium.ttf);
+}
+@font-face {
+    font-family: Archivo-MediumItalic;
+    src: url(@assets/fonts/GlobalFont/Archivo/Archivo-MediumItalic.ttf);
+}
+@font-face {
+    font-family: Archivo-Regular;
+    src: url(@assets/fonts/GlobalFont/Archivo/Archivo-Regular.ttf);
+}
+@font-face {
+    font-family: Archivo-SemiBold;
+    src: url(@assets/fonts/GlobalFont/Archivo/Archivo-SemiBold.ttf);
+}
+@font-face {
+    font-family: Archivo-SemiBoldItalic;
+    src: url(@assets/fonts/GlobalFont/Archivo/Archivo-SemiBoldItalic.ttf);
+}

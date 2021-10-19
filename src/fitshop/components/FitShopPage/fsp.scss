@@ -1,0 +1,117 @@
+.fsp-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f7f8f9;
+
+  .top-bar {
+    flex: none;
+    height: 60px;
+    width: 100%;
+    background: #445f76;
+    box-shadow: 0px 2px 10px 0px rgba(219, 222, 231, 0.31);
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    padding-left: 49px;
+    padding-right: 64px;
+    justify-content: space-between;
+
+    .line-1-y {
+      width: 1px;
+      display: inline-block;
+      background: #ffffff;
+      height: 12px;
+    }
+    .left {
+      display: flex;
+      align-items: center;
+      .back-btn {
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 4px;
+        margin-right: 32px;
+        .icon {
+          font-size: 12px;
+          opacity: 1;
+        }
+      }
+
+      .save-btn {
+        margin-left: 32px;
+        font-size: 14px;
+        cursor: pointer;
+
+        .icon {
+          margin-right: 8px;
+          opacity: 1;
+          color: #8b9ba9;
+        }
+      }
+
+      .to-route {
+        color: #ffffff;
+        text-decoration: none;
+        margin-left: 32px;
+      }
+    }
+    .toggle-screen {
+      display: flex;
+      width: 80px;
+      align-items: center;
+      justify-content: space-between;
+      .icon {
+        font-size: 18px;
+        opacity: 0.39;
+        cursor: pointer;
+
+        &.selected {
+          opacity: 1;
+        }
+      }
+    }
+    .right {
+      display: flex;
+      align-items: center;
+      .icon {
+        font-size: 12px !important;
+        margin-right: 6px;
+        opacity: 0.39;
+      }
+      .preview {
+        margin-left: 24px;
+        cursor: pointer;
+        color: #fff;
+      }
+      .release {
+        margin-right: 24px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .fsp-content {
+    flex: 1;
+    display: flex;
+    overflow: auto;
+    height: 100%;
+    .fit-aside-container {
+      flex: none;
+    }
+    .fit-main {
+      flex: 1;
+      padding-top: 15px;
+    }
+  }
+
+  #fpp-iframe {
+    border-radius: 6px;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, .3);
+  }
+}

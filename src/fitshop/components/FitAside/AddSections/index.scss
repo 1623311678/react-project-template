@@ -1,0 +1,37 @@
+.add-section-wrapper {
+        .box-title{
+            font-size: 16px;
+            color: #222222;
+            padding-top: 16px;
+            padding-left: 16px;
+            padding-bottom: 6px;
+            font-weight: 500;
+        }
+        .line-1 {
+            background-color: #EAECEF;
+            height: 1px;
+            width: 100%;
+        }
+        .box-list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .asw-box{
+            font-size: 14px;
+            font-weight: 400;
+            width: 74px;
+            margin: 9px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            &:hover{
+                opacity: .7;
+            }
+        }
+        .img{
+            text-align: center;
+            margin-bottom: 8px;
+        }
+    }

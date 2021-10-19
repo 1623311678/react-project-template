@@ -1,0 +1,8 @@
+@font-face {
+    font-family: Scheherazade-Bold;
+    src: url(@assets/fonts/GlobalFont/Scheherazade/Scheherazade-Bold.ttf);
+}
+@font-face {
+    font-family: Scheherazade-Regular;
+    src: url(@assets/fonts/GlobalFont/Scheherazade/Scheherazade-Regular.ttf);
+}

@@ -1,0 +1,42 @@
+ul,
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.fpp_list {
+    width: 100%;
+    overflow-y: auto;
+    background-color: #f1f4f7;
+}
+.fpp_list-skeleton {
+    padding: 0 10px;
+}
+.fpp_list-item {
+    color: #666666;
+    font-size: 14px;
+    padding: 12px 10px;
+    white-space: nowrap;
+    cursor: pointer;
+    position: relative;
+    font-family: PingFangSC-Regular, PingFang SC;
+    letter-spacing: 1px;
+    background-color: #f1f4f7;
+    display: flex;
+    align-items: center;
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.07);
+    }
+}
+.fpp_list-item.fpp_list-active {
+    font-weight: bold;
+    background-color: #fff;
+}
+.fpp_list-item.fpp_list-disabled {
+    background-color: #f5f5f5;
+    color: rgba(0, 0, 0, 0.25);
+    cursor: not-allowed;
+    pointer-events: none;
+    user-select: none;
+}

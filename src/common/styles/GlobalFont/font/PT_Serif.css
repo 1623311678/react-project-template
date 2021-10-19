@@ -1,0 +1,16 @@
+@font-face {
+    font-family: PT_Serif-Web-Bold;
+    src: url(@assets/fonts/GlobalFont/PT_Serif/PT_Serif-Web-Bold.ttf);
+}
+@font-face {
+    font-family: PT_Serif-Web-BoldItalic;
+    src: url(@assets/fonts/GlobalFont/PT_Serif/PT_Serif-Web-BoldItalic.ttf);
+}
+@font-face {
+    font-family: PT_Serif-Web-Italic;
+    src: url(@assets/fonts/GlobalFont/PT_Serif/PT_Serif-Web-Italic.ttf);
+}
+@font-face {
+    font-family: PT_Serif-Web-Regular;
+    src: url(@assets/fonts/GlobalFont/PT_Serif/PT_Serif-Web-Regular.ttf);
+}

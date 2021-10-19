@@ -1,0 +1,68 @@
+@for $i from 0 through 40 {
+    /** margin **/
+    .mt-#{$i} {
+      margin-top: #{$i}px !important;
+    }
+    .mr-#{$i} {
+      margin-right: #{$i}px !important;
+    }
+    .ml-#{$i} {
+      margin-left: #{$i}px !important;
+    }
+    .mb-#{$i} {
+      margin-bottom: #{$i}px !important;
+    }
+    .mg-#{$i} {
+      margin: #{$i}px !important;
+    }
+  
+    /** padding **/
+    .pt-#{$i} {
+      padding-top: #{$i}px !important;
+    }
+    .pr-#{$i} {
+      padding-right: #{$i}px !important;
+    }
+    .pl-#{$i} {
+      padding-left: #{$i}px !important;
+    }
+    .pb-#{$i} {
+      padding-bottom: #{$i}px !important;
+    }
+    .pd-#{$i} {
+      padding: #{$i}px !important;
+    }
+  }
+  
+  
+  /** font-size **/
+  @for $i from 10 through 40 {
+    .f#{$i} {
+      font-size: #{$i}px !important;
+    }
+  }
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸。 增加了高度*/
+::-webkit-scrollbar
+{
+  width: 6px;
+  height: 6px;
+  background-color: #fff;
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track
+{
+  border-radius: 10px;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  background-color: rgba(144,147,153,.3);
+}
+/*placeholder  颜色修改*/
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder{
+  color:#ccc !important;
+}

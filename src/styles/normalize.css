@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: 'Helvetica Neue', Helvetica, STHeiTi, sans-serif;
+  /* min-width: 1200px; */
+}
+
+p,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+input, button {
+  border: none;
+}
+li{
+  list-style: none;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: ' ';
+  clear: both;
+  height: 0;
+}

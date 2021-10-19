@@ -1,0 +1,46 @@
+.modal-inner-root  {
+    position: absolute;
+    top: 200%;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background: #ffffff;
+    z-index: 999;
+    transition: top 500ms; // 动画有点问题,后续优化
+
+    &.show {
+        top: 0;
+    }
+
+
+
+    .h-wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 36px;
+        background: #F7F8F9;
+        position: relative;
+        .title {
+            font-size: 14px;
+            color: #222222;
+        }
+
+        .icon-close{
+            position: absolute;
+            right: 4px;
+            top: 6px;
+        }
+    }
+    .b-wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        button {
+            width: 60%;
+        }
+
+    }
+}
+

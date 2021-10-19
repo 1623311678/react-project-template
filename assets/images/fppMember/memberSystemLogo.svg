@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="58px" height="53px" viewBox="0 0 58 53" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>会员系统</title>
+    <defs>
+        <linearGradient x1="35.7285797%" y1="0%" x2="100%" y2="123.395004%" id="linearGradient-1">
+            <stop stop-color="#FE4A7E" offset="0%"></stop>
+            <stop stop-color="#FDAC3C" offset="100%"></stop>
+        </linearGradient>
+        <filter x="-47.1%" y="-59.3%" width="194.1%" height="218.5%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="2" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.989838089   0 0 0 0 0.661010682   0 0 0 0 0.502086317  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="2021下" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="b端-会员系统-预览图" transform="translate(-1342.000000, -2480.000000)">
+            <g id="会员系统" transform="translate(1346.000000, 2480.000000)">
+                <rect id="矩形备份-13" fill="url(#linearGradient-1)" x="0" y="0" width="50" height="50" rx="25"></rect>
+                <g id="编组备份-6" filter="url(#filter-2)" transform="translate(8.000000, 14.000000)" fill-rule="nonzero">
+                    <path d="M0,8.33305511 L16.4758256,26.5884768 L8.75562702,8.33305511 L0,8.33305511 Z M17.2138602,26.5978431 L33.6465456,8.31811101 L24.8327219,8.31811101 L17.2138602,26.5978431 Z" id="形状" fill="#FFCCBD"></path>
+                    <path d="M23.9928775,8.318 L16.8111011,25.7778463 L9.62287749,8.318 L23.9928775,8.318 Z M16.8257072,0 L24.1568775,7.57 L9.47587749,7.57 L16.8257072,0 Z" id="形状结合" fill="#FFF3F0"></path>
+                    <path d="M17.8232728,-4.4408921e-15 L25.1798775,7.57082745 L33.6465456,7.57082745 L26.2266479,-4.4408921e-15 L17.8232728,-4.4408921e-15 Z M15.8232728,-2.22044605e-15 L7.41016037,-2.22044605e-15 L0,7.57082745 L8.45693073,7.57082745 L15.8232728,-2.22044605e-15 Z" id="形状" fill="#FEE5E2"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

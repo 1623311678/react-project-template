@@ -1,0 +1,47 @@
+@import "@src/styles/base.scss";
+
+.empty-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 600px;
+
+  .empty-page-img {
+    width: 150px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .empty-page-title {
+    font-size: 16px;
+    color: $textColor;
+    font-weight: 600;
+    padding: 28px 0 16px;
+  }
+
+  .empty-page-info {
+    font-size: 14px;
+    padding: 0 0 30px;
+  }
+
+  .empty-page-content {
+    display: flex;
+    flex-direction: row;
+
+    .empty-page-btn {
+      border: 1px solid $btnBaseColor;
+      border-radius: 4px;
+      padding: 7px 23px;
+      color: #fff;
+      cursor: pointer;
+      background-color: $btnBaseColor;
+
+      &:not(:first-child) {
+        margin-left: 24px;
+      }
+    }
+  }
+}

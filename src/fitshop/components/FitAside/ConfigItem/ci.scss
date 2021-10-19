@@ -1,0 +1,338 @@
+@import "@src/styles/_mixin.scss";
+.config-item-wrapper {
+    background-color: #ffffff;
+
+    .module-info {
+        padding-top: 16px;
+    }
+    .border-bottom-1px {
+        border-bottom: 1px solid #eaecef;
+    }
+
+    .module__item {
+        box-sizing: border-box;
+        padding: 0 24px;
+        margin-bottom: 16px;
+    }
+    .menuAddImage {
+        .MuiButtonBase-root {
+        }
+        .MuiAccordionSummary-root {
+            justify-content: space-between;
+        }
+        .MuiAccordionSummary-content {
+            flex: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            .common__accordion-title {
+                span {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+            }
+        }
+        .AccordionDetailsContext {
+            padding: 10px;
+            font-size: 13px;
+            .common__accordion-title {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            .addImageMenuChild {
+                padding: 0 10px;
+                margin-bottom: 10px;
+                .image-picker-wrapper {
+                    width: 100%;
+                    img {
+                        max-width: 100%;
+                    }
+                }
+            }
+            .MuiAccordionSummary-content {
+                margin: 8px 0;
+                flex: 1;
+            }
+            .MuiAccordionSummary-content {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                padding-right: 3px;
+            }
+            .MuiAccordionSummary-root {
+                min-height: auto;
+            }
+            .MuiIconButton-root {
+                padding: 8px 12px;
+            }
+
+            .MuiAccordionDetails-root {
+                // padding: 5px;
+            }
+        }
+        .MuiAccordion-root.Mui-expanded {
+            margin: 5px 0;
+        }
+        .addItemButton {
+            margin-top: 5px;
+        }
+        .ant-radio-wrapper {
+            font-size: 12px;
+        }
+    }
+    .mb0 {
+        margin-bottom: 0;
+    }
+    .image-picker-wrapper {
+        width: 242px;
+        height: 85px;
+    }
+
+    .title-only-one-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .image-picker-small-wrapper {
+        width: 204px;
+        height: 71px;
+    }
+
+    .t12 {
+        font-size: 12px;
+        font-weight: 400;
+        color: #999999;
+    }
+    .t14 {
+        font-size: 14px;
+        font-weight: 400;
+        color: #222222;
+        margin-bottom: 8;
+    }
+    .t16 {
+        font-size: 16px;
+        font-weight: 500;
+        color: #222222;
+    }
+
+    .module__title {
+        display: flex;
+        justify-content: space-between;
+    }
+    .ci__input {
+        width: 242px;
+        height: 36px;
+        border-radius: 2px;
+        border: 1px solid #d7dde3;
+    }
+    .btn-style-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .radio-group {
+            flex-direction: row !important;
+            flex-wrap: nowrap;
+            .MuiFormControlLabel-root {
+                margin-right: 0;
+                .MuiTypography-root {
+                    margin-left: -10px;
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+
+    .adding-wrapper {
+        min-height: 300px;
+
+        .s_b-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            .image-picker-component-wrapper {
+                width: 100%;
+                height: 94px;
+                max-width: 204px;
+            }
+
+            button {
+                align-self: center;
+
+                width: 60%;
+            }
+            .collection-r {
+                display: flex;
+                align-items: center;
+                height: 36px;
+                line-height: 36px;
+                background-color: #eef0f2;
+                padding: 0 10px;
+                margin-bottom: 20px;
+                @include limit(1);
+            }
+            .MuiListItemText-root {
+                word-break: break-word;
+            }
+        }
+        .module__item {
+            padding: 0 !important;
+        }
+    }
+    .image-layout-types {
+        // 多图-2的布局
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .type {
+            width: 49%;
+            height: 68px;
+            border-radius: 2px;
+            &.selected {
+                border: 2px solid #0179ff;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .product_list_type:nth-child(3),
+        .product_list_type:nth-child(4) {
+            margin-top: 8px;
+        }
+    }
+
+    .image-layout-types-multi-line {
+        // 多图-2的布局
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .type {
+            width: 100%;
+            height: 68px;
+            border-radius: 2px;
+            &.selected {
+                border: 2px solid #0179ff;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+            }
+
+            &:first-of-type {
+                margin-bottom: 12px;
+            }
+        }
+    }
+
+    .weak-text-tips {
+        font-size: 12px;
+        font-weight: 400;
+        color: #999999;
+        line-height: 22px;
+        letter-spacing: 1px;
+    }
+
+    .delete-row {
+        height: 36px;
+        background: #fbfbfc;
+        color: #068468;
+        border-radius: 2px 2px 0px 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    .append-block-btn {
+        width: 100%;
+        height: 36px;
+        background: #068468;
+        cursor: pointer;
+        border-radius: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+    }
+
+    &.product-list-wrapper {
+        .product-row {
+            padding: 0 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            img {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+
+    .collection-row__img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .common__accordion-title {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        .icon {
+            font-size: 14px;
+            margin-right: 4px;
+        }
+        .title {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            flex: 1;
+        }
+    }
+
+    .slider-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .s {
+            flex: 1;
+        }
+        .tip {
+            width: 54px;
+            flex: none;
+            text-align: right;
+        }
+    }
+
+    .site-logo-container {
+        position: relative;
+
+        svg {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: #999;
+            }
+        }
+    }
+
+    .header-menu-title-wrapper,
+    .footer-menu-title-wrapper {
+        a {
+            font-size: 12px;
+            color: #222;
+
+            svg {
+                color: #0179ff;
+            }
+        }
+    }
+}

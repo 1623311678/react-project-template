@@ -1,0 +1,26 @@
+.fpp_skeleton {
+    height: 16px;
+    animation: fpp_skeleton-keyframes-pulse 1.5s ease-in-out 0.5s infinite;
+    transform: scale(1, 0.6);
+    border-radius: 5px;
+    transform-origin: 0 60%;
+    margin: 10px 0;
+    background-color: rgba(0, 0, 0, 0.08);
+}
+.fpp_skeleton-rect {
+    width: 100%;
+}
+.fpp_skeleton-circle {
+    border-radius: 50%;
+}
+@keyframes fpp_skeleton-keyframes-pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}

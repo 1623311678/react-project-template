@@ -1,0 +1,338 @@
+@import "@src/styles/base.scss";
+
+.fpp_pic-upload {
+  font-size: 12px;
+  width: 100%;
+  height: 100%;
+  background: rgba(1, 121, 255, 0.03);
+  border-radius: 2px;
+  border: 1px dashed $btnBaseColor;
+  color: $btnBaseColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    // max-width: 100%;
+    // width: 100%;
+    // height: auto;
+    height: 100%;
+  }
+
+  .text {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .t {
+    display: inline-block;
+    margin-left: 5px;
+  }
+}
+
+.fpp_insert-image-modal {
+  // ant model css模块
+  .ant-modal-close {
+    color: #ffffff;
+  }
+  .ant-modal-header {
+    background-color:  #3e5971;
+    .ant-modal-title {
+      color: #ffffff;
+    }
+  }
+  .ant-modal-body {
+    padding: 0;
+    .ant-tabs-nav {
+      padding: 0 10px;
+    }
+    .editor-product-image-url {
+      padding: 20px;
+    }
+  }
+  //ant model footer css模块
+  .ant-modal-footer {
+    border-top: none;
+    .fpp_ImageModelFooter {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 10px 0;
+      border-top: none;
+      button {
+        border-radius: 2px;
+        &:hover {
+          border-color: #d9d9d9;
+        }
+      }
+      button:first-child {
+        &:hover {
+          color: rgba(0, 0, 0, 0.85);
+        }
+      }
+      .active-btn {
+        background-color: #068468;
+        color: #ffffff;
+      }
+      .product-pagination {
+        padding: 0;
+      }
+    }
+  }
+
+  // 图片列表 css模块
+  .fpp_image-list {
+    .fpp_image-ul {
+      display: grid;
+      justify-content: space-between;
+      grid-template-columns: repeat(auto-fill, 120px);
+      grid-template-rows: repeat(auto-fill, 120px);
+      grid-gap: 14px;
+      padding: 20px;
+      // max-height: 400px;
+      overflow-y: scroll;
+      height: 430px;
+      border-bottom: 0.1rem solid #e1e3e5;
+      .fpp_button-upload {
+        width: 120px;
+        height: 120px;
+        border: 1px dashed #068468;
+        cursor: pointer;
+        border-radius: 3px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #068486;
+        font-size: 36px;
+      }
+      .fpp_button-upload[ant-click-animating-without-extra-node]::after {
+        border: 0;
+        opacity: 0;
+        animation: none 0 ease 0 1 normal;
+      }
+      .fpp_image-li.fpp_image-active {
+        margin: auto;
+        border: 2px solid #068468;
+        .fpp_correct-icon{
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 20px;
+          height: 20px;
+          background-color: #068468;
+          border-bottom-left-radius: 3px;
+          span {
+            display: inline-block;
+            font-weight: 700;
+            margin:0 0 2px 7px;
+            width: 8px;
+            height: 13px;
+            transform: rotate(45deg);
+            border-style: solid;
+            border-color: #ffffff;
+            border-width:   0 2px 2px 0 ;
+          }
+        }
+      }
+      .fpp_image-li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        // border: 1px solid $baseBorderColor;
+        // border-radius: 3px;
+        width: 120px;
+        height: 120px;
+        position: relative;
+        .loading-box {
+          display: flex;
+          justify-content:center;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          font-size: 30px;
+          background-color: #f7f7f7;
+          color: #dbdbdb;
+          vertical-align: top;
+          -webkit-transition: .3s color, .3s border;
+          transition: .3s color, .3s border;
+          position: absolute;
+          .loading-animate {
+            display: inline-block;
+            width: 1.5em;
+            height: 1.5em;
+            color: inherit;
+            vertical-align: middle;
+            pointer-events: none;
+
+            border: .15em solid transparent;
+            border-top-color: currentcolor;
+            border-radius: 50%;
+            -webkit-animation: 1s loading-animate linear infinite;
+            animation: 1s loading-animate linear infinite;
+            position: relative;
+            &:before {
+              content: '';
+              display: block;
+              width: inherit;
+              height: inherit;
+              position: absolute;
+              top: -.15em;
+              left: -.15em;
+              border: .15em solid currentcolor;
+              border-radius: 50%;
+              opacity: .5;
+            }
+          }
+          @-webkit-keyframes loading-animate {
+            0% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+          }
+          @keyframes loading-animate {
+              0% {
+                  -webkit-transform: rotate(0deg);
+                  transform: rotate(0deg);
+              }
+              100% {
+                  -webkit-transform: rotate(360deg);
+                  transform: rotate(360deg);
+              }
+          }
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: scale-down;
+        }
+        .fpp_del-icon {
+          font-size: 14px;
+          position: absolute;
+          left: 2px;
+          top: 0;
+          display: none;
+          color: #666;
+        }
+        &:hover {
+          .fpp_del-icon {
+            display: block;
+          }
+        }
+      }
+    }
+    .no-content {
+      width: 100%;
+      height: 100%;
+      min-height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  
+  // 免费素材左侧tab
+  .free-stuff-box {
+    display: flex;
+    justify-content: space-between;
+    .fpp_image-list {
+      width: 100%;
+    }
+    .free-stuff-tab{
+      display: flex;
+      flex-direction: column;
+      width: 128px;
+      background-color: #F1F4F7;
+      cursor: pointer;
+      height: 430px;
+      overflow-y: scroll;
+      ul li {
+        height: 36px;
+        display: flex;
+        align-items: center;
+        margin-left: 18px;
+      }
+      .free-stuff-tab-active{
+        margin-left: 0;
+        background-color: #ffffff;
+      }
+      .free-stuff-tab-active::before {
+        content: "";
+        padding-right: 15px;
+        border-left: 3px solid #068468;
+        height: 26px;
+        display: inline-block;
+      }
+    }
+  }
+  
+  //图片替换文本编辑 css 模块
+  .editor-upload-image-alt {
+    padding: 20px;
+    border-bottom: 0.1rem solid #e1e3e5;
+    background-color: #fafbfb;
+    .editor-upload-image-alt-title {
+      padding-bottom: 5px;
+    }
+  }
+
+  // 图片尺寸 css模块
+  .editor-upload-image-size {
+    padding: 20px;
+    border-bottom: 0.1rem solid #e1e3e5;
+    background-color: #fafbfb;
+    .editor-upload-image-alt-title {
+      padding-bottom: 5px;
+    }
+    .ant-select {
+      width: 100%;
+    }
+  }
+  // 文件上传 input
+  #editorUploadImageID {
+    display: none;
+  }
+  // 视频URL error css 模块
+  .media-url-error-info {
+    color: $errorTextColor;
+    padding-top: 5px;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    img {
+      width: 15px;
+      height: 15px;
+      margin-right: 10px;
+    }
+  }
+}
+.editor-product-image-size {
+  border-top: 1px solid $baseBorderColor;
+  padding: 20px;
+
+  .ant-select {
+    width: 100%;
+  }
+}
+
+.insert-video-modal {
+  .insert-video-modal-tooltip {
+    color: #6d7175;
+  }
+}
