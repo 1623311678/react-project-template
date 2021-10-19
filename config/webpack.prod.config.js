@@ -152,4 +152,3 @@ const prodConfig =  {
 };
 
 module.exports = merge(Base,prodConfig)
-console.log('merge(Base,prodConfig)',merge(Base,prodConfig))

@@ -13,7 +13,7 @@ $ npm i
 $ npm start
 
 ```
-run in http://localhost:9004/#/themes
+run in http://localhost:9004
 
 在 config/webpack.dev.config.js 内修改本地代理的店铺url，随后，本地地址内填写对应的token即可
 
