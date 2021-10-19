@@ -1,13 +1,13 @@
 {
   "name": "fun-pin-pin",
   "version": "0.0.0",
-  "main": "src/index.tsx",
+  "main": "src/app.tsx",
   "repository": {
     "type": "git",
-    "url": "ssh://guoqiang@papayamobile.com@source.developers.google.com:2022/p/papaya-hub/r/gaea-dashboard-fe"
+    "url": "https://git.funpinpin.cn/gaea/gaea-storefront-theme-editor"
   },
   "author": "Papaya",
-  "homepage": "https://source.cloud.google.com/papaya-hub/gaea-dashboard-fe?authuser=1",
+  "homepage": "https://git.funpinpin.cn/gaea/gaea-storefront-theme-editor",
   "engines": {
     "node": ">=12.12.0",
     "npm": ">=6.11.0"

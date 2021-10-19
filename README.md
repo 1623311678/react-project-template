@@ -1,13 +1,10 @@
-# 用到的第三方库
-  - [material-ui](https://material-ui.com/zh/getting-started/installation/)
+### 版本环境要求：
 
-test env
-## Getting Started
+```
+ "node": ">=12.12.0",
+ "npm": ">=6.11.0"
 
-### Prerequisites
-
-- Node.js 12.12+
-- A running instance of [Saleor](https://github.com/mirumee/saleor/).
+```
 
 ### 本地开发
 
@@ -16,6 +13,9 @@ $ npm i
 $ npm start
 
 ```
+run in http://localhost:9004/#/themes
+
+在 config/webpack.dev.config.js 内修改本地代理的店铺url，随后，本地地址内填写对应的token即可
 
 ### 不同的分支名对应不同的环境
 - dev: 测试环境, 后端接口为 api-dev,连接测试环境数据库, 各种key为测试key
