@@ -5,7 +5,29 @@
  "npm": ">=6.11.0"
 
 ```
+### 建议：
 
+1 建议使用淘宝镜像安装依赖，
+
+如何查看自己的镜像是淘宝镜像？运行下面命令：
+```
+ npm config get 
+
+```
+
+ 如何设置淘宝镜像？
+
+```
+  npm config set registry http://registry.npm.taobao.org/
+
+```
+
+2 如果淘宝镜像安装失败，建议使用yarn进行安装，或者使用npm官方镜像
+
+```
+ npm config set registry https://registry.npmjs.org/
+ 
+```
 ### 本地开发
 
 ```
