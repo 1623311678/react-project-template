@@ -54,6 +54,8 @@ export const simplifyLinkToObj = lkobj => ({
   type: lkobj.type
 });
 
+
+
 const FitAside: React.FC = ({ previewId }) => {
   const [state, dispatch] = useContext(FitShopStoreContext);
   const { decorateData, globalConfig } = state;

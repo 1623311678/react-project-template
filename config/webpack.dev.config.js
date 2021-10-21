@@ -38,7 +38,7 @@ const devConfig = {
       }
     },
     hot: true,
-    port: 9004
+    port: 9002
   },
   mode:'development',
   devtool:  "sourceMap",
