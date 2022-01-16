@@ -8,7 +8,7 @@ const Base = require('./webpack.base.config')
 
 const resolve = path.resolve.bind(path, __dirname);
 const dashboardBuildPath = path.resolve(__dirname,'../build')
-const publicPath = "https://cdn1.funpinpin.com/admin/static/";
+const publicPath = "./static";
 const fileLoaderPath = "file-loader?name=[name].[hash].[ext]";
 const prodConfig =  {
   mode: "production",
