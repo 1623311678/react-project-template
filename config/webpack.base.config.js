@@ -16,7 +16,6 @@ const createHappyPlugin = (id, loaders) =>
     verbose: process.env.HAPPY_VERBOSE === "1" // make happy more verbose with HAPPY_VERBOSE=1
   });
 
-require("dotenv").config();
 
 const pathsPlugin = new TsconfigPathsPlugin({
   configFile: path.resolve(__dirname,'../tsconfig.json')

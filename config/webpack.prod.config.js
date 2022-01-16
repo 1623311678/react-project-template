@@ -6,8 +6,6 @@ const TerserPlugin = require("terser-webpack-plugin");
 const { merge } = require('webpack-merge');
 const Base = require('./webpack.base.config')
 
-
-require("dotenv").config();
 const resolve = path.resolve.bind(path, __dirname);
 const dashboardBuildPath = path.resolve(__dirname,'../build')
 const publicPath = "https://cdn1.funpinpin.com/admin/static/";

@@ -8,12 +8,7 @@
     "no-implicit-dependencies": false,
     "no-shadowed-variable": false,
     "no-submodule-imports": [
-      true,
-      "@material-ui",
-      "lodash-es",
-      "@assets",
-      "@locale",
-      "@saleor"
+      true
     ]
   }
 }

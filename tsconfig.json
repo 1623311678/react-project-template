@@ -11,8 +11,6 @@
     "noUnusedParameters": true,
     "downlevelIteration": true,
     "paths": {
-      "@assets/*": ["assets/*"],
-      "@locale/*": ["locale/*"],
       "@src/*": ["src/*"],
     },
     "resolveJsonModule": true
