@@ -39,14 +39,7 @@ const devConfig = {
           "style-loader",
           "css-loader",
           "sass-loader"
-        ].concat([
-          {
-            loader: "sass-resources-loader",
-            options: {
-              resources:  path.resolve(__dirname,'../src/styles/base.scss')
-            }
-          }
-        ])
+        ]
       },
       {
         include: [
