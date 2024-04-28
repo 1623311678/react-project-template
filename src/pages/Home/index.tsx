@@ -1,9 +1,11 @@
 import React from "react"
 import { post, get, uploadFile } from "@src/api/request"
+import { HDButton } from "hundun-ui-library-react"
+import bgImage from "@src/assets/images/bk.png"
 function Home() {
   return (
     <div>
-      <h2>主页</h2>
+      <h2>主页1</h2>
       <input
         type="file"
         onChange={e => {
@@ -27,6 +29,8 @@ function Home() {
         />
       </form>
       <iframe name="stop" style={{ display: "none" }}></iframe>{" "}
+      <HDButton text="深化开始的"></HDButton>
+      <img src={bgImage} alt="bgImage" />
     </div>
   )
 }

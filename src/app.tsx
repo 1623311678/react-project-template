@@ -7,7 +7,10 @@ import LayoutHeader from "@src/components/Header"
 import store from "./store"
 import { Provider, useSelector } from "react-redux"
 import Login from "./pages/Login"
+import "normalize.css"
 import "./app.less"
+import "hundun-ui-library-react/dist/hundun-ui-library-react.css"
+
 const App: FC = () => {
   const token = useSelector((state: any) => {
     return state.userInfo.token

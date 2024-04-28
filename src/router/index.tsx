@@ -1,41 +1,55 @@
-import React, { Fragment } from "react"
+import React, { Fragment, Suspense, lazy } from "react"
 import {
   BrowserRouter as Router,
   Route,
   Switch,
   Redirect
 } from "react-router-dom"
-import Home from "@src/pages/Home"
-import About from "@src/pages/About"
-import Users from "@src/pages/Users"
-import Users1 from "@src/pages/Users1"
-import Users2 from "@src/pages/Users2"
-import NotFound from "@src/pages/404"
+const Home = lazy(() =>
+  import(/* webpackChunkName: "Home" */ "@src/pages/Home")
+)
+const NotFound = lazy(() =>
+  import(/* webpackChunkName: "404" */ "@src/pages/404")
+)
+const About = lazy(() =>
+  import(/* webpackChunkName: "About" */ "@src/pages/About")
+)
+const Users = lazy(() =>
+  import(/* webpackChunkName: "Users" */ "@src/pages/Users")
+)
+const Users1 = lazy(() =>
+  import(/* webpackChunkName: "Users1" */ "@src/pages/Users1")
+)
+const Users2 = lazy(() =>
+  import(/* webpackChunkName: "Users2" */ "@src/pages/Users2")
+)
 
 const routes = [
-  { path: "/", compoment: Home },
-  { path: "/404", compoment: NotFound },
-  { path: "/about", compoment: About },
-  { path: "/users", compoment: Users },
-  { path: "/users/app1", compoment: Users1 },
-  { path: "/users/app2", compoment: Users2 }
+  { path: "/", component: Home },
+  { path: "/404", component: NotFound },
+  { path: "/about", component: About },
+  { path: "/users", component: Users },
+  { path: "/users/app1", component: Users1 },
+  { path: "/users/app2", component: Users2 }
 ]
 function AppRouter() {
   return (
     <Fragment>
-      <Switch>
-        {routes.map((item, index) => (
-          <Route
-            path={item.path}
-            component={item.compoment}
-            key={index}
-            exact
-          />
-        ))}
-        <Route path="*">
-          <Redirect to="/404" />
-        </Route>
-      </Switch>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Switch>
+          {routes.map((item, index) => (
+            <Route
+              path={item.path}
+              component={item.component}
+              key={index}
+              exact
+            />
+          ))}
+          <Route path="*">
+            <Redirect to="/404" />
+          </Route>
+        </Switch>
+      </Suspense>
     </Fragment>
   )
 }

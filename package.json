@@ -8,18 +8,19 @@
   },
   "scripts": {
     "start": "cross-env webpack-dev-server -d --mode development --config config/webpack.dev.config.js",
-    "build": "cross-env NODE_ENV=production webpack -p --display=minimal --config config/webpack.prod.config.js"
+    "build": "rm -rf dist && cross-env NODE_ENV=production webpack -p --display=minimal --config config/webpack.prod.config.js"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.5",
-    "antd": "^4.23.4",
+    "antd": "^5.16.4",
     "axios": "^1.0.0",
-    "babel-plugin-macros": "^3.1.0",
     "classnames": "^2.2.6",
+    "hundun-ui-library-react": "0.0.10",
     "lodash": "^4.17.20",
     "lodash-es": "^4.17.14",
     "moment-timezone": "^0.5.32",
     "node-sass": "^5.0.0",
+    "normalize.css": "^8.0.1",
     "path-to-regexp": "^6.2.0",
     "qs": "^6.11.0",
     "react": "^18.2.0",
@@ -28,9 +29,7 @@
     "react-redux": "^8.0.4",
     "react-router": "^5.3.4",
     "react-router-dom": "^5.3.4",
-    "typescript": "^3.9.7",
-    "url-join": "^4.0.1",
-    "webpack-merge": "^5.8.0"
+    "url-join": "^4.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
@@ -75,6 +74,9 @@
     "autodll-webpack-plugin": "^0.4.2",
     "babel-core": "^7.0.0-bridge.0",
     "babel-loader": "^8.0.6",
+    "babel-plugin-component": "^1.1.1",
+    "babel-plugin-import": "^1.13.8",
+    "babel-plugin-macros": "^3.1.0",
     "babel-plugin-react-intl": "^5.1.11",
     "babel-plugin-react-intl-auto": "^3.1.0",
     "browser-sync": "^2.26.14",
@@ -117,10 +119,12 @@
     "style-loader": "^2.0.0",
     "terser-webpack-plugin": "^4.1.1",
     "tsconfig-paths-webpack-plugin": "^3.2.0",
+    "typescript": "^3.9.7",
     "webpack": "^4.46.0",
-    "webpack-bundle-analyzer": "^4.4.0",
+    "webpack-bundle-analyzer": "^4.10.2",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.8.0",
     "webpackbar": "^5.0.0-3"
   },
   "optionalDependencies": {
